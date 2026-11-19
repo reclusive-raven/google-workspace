@@ -1,0 +1,9 @@
+# secrets and runtime state never go in git
+secrets/*
+!secrets/credentials.example.json
+!secrets/backups/.gitkeep
+
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/

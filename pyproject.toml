@@ -1,0 +1,24 @@
+[project]
+name = "google-workspace"
+version = "0.1.0"
+description = "Read and write Google Docs & Sheets in place (Claude Code skill): resolve .gdoc/.gsheet stubs, render Docs to Markdown, read/write Sheets, safe previewable writes"
+requires-python = ">=3.11"
+dependencies = [
+    "google-api-python-client>=2.130",
+    "google-auth>=2.30",
+    "google-auth-oauthlib>=1.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+# Not a distributable package - just a managed env for the scripts/ + tests.
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+# tests import the flat modules under scripts/ directly
+pythonpath = ["scripts"]
+testpaths = ["tests"]
